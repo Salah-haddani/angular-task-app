@@ -1,0 +1,23 @@
+<div class="filter-container">
+    <div>
+      <label>Status:</label>
+      <select [(ngModel)]="selectedStatus">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+      </select>
+    </div>
+  
+    <div>
+      <label>Priority:</label>
+      <select [(ngModel)]="selectedPriority">
+        <option value="all">All</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+    </div>
+  
+    <button mat-button (click)="applyFilter()">Apply Filter</button>
+    <button (click)="resetFilter()">Reset Filter</button>
+</div>

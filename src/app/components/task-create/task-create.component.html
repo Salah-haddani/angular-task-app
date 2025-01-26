@@ -1,0 +1,32 @@
+<div class="p-3">
+    <p class="fw-bold mb-1">Create Task</p>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <div class="d-flex gap-2">
+        <mat-form-field appearance="outline" class="w-50 title-field">
+          <input matInput type="text" placeholder="Type anything..." formControlName="title" [(ngModel)]="task.title" />
+          <mat-hint>Type the task title</mat-hint>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <input matInput [matDatepicker]="dp" formControlName="dueDate" [(ngModel)]="task.dueDate" />
+          <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker #dp></mat-datepicker>
+          <mat-hint>Select due date</mat-hint>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-select formControlName="priority" [(ngModel)]="task.priority">
+            <mat-option value="High">High</mat-option>
+            <mat-option value="Medium">Medium</mat-option>
+            <mat-option value="Low">Low</mat-option>
+          </mat-select>
+          <mat-hint>Select the task priority</mat-hint>
+        </mat-form-field>
+  
+        <button type="submit" mat-fab color="primary">
+          <mat-icon>check</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+  

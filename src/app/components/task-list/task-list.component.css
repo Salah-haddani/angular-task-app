@@ -1,0 +1,111 @@
+.task-list-container,
+.task-item-container {
+  border-radius: 10px;
+}
+.completed-task {
+  text-decoration: line-through;
+}
+.mat-elevation-z2 {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+.mat-elevation-z3 {
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+}
+.task-list-container {
+  height: calc(100vh - 298px);
+  overflow: auto;
+}
+
+::ng-deep .mat-bottom-sheet-container-large,
+::ng-deep .mat-bottom-sheet-container-xlarge,
+::ng-deep .mat-bottom-sheet-container-medium {
+  min-width: 1320px !important;
+  width: 100%;
+}
+.task-details-container {
+  flex: 1;
+}
+.task-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-date {
+  flex: 2;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.task-priority {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  color: white;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.custom-status-badge {
+  flex: 1;
+  text-align: center;
+  font-size: 0.85rem;
+  border-radius: 12px;
+  padding: 4px 8px;
+}
+
+.custom-status-badge.completed {
+  border: solid;
+  border-color: #28a745;
+  color: #28a745;
+}
+
+.custom-status-badge.pending {
+  border: solid;
+  border-color: #766007;
+  color: #766007;
+}
+
+.sorting-controls button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  font-family: "Arial", sans-serif;
+}
+
+.add-task-button {
+  position: absolute;
+  top: 215px;
+  left: 45px;
+  background-color: #ffffff;
+  color: rgba(27, 84, 29, 0.926);
+  font-size: 1.2rem;
+  padding: 2px 20px;
+  border: solid;
+  border-color: rgba(27, 84, 29, 0.926);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.add-task-button:hover {
+  background-color: rgba(27, 84, 29, 0.926);
+  color: #ffffff;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,55 @@
+<div class="container position-relative">
+    <h1>
+        Task Management App By Salah Haddani
+    </h1>
+
+    <app-task-filter (filterChange)="applyFilter($event)"></app-task-filter>
+
+    <div class="sorting-controls d-flex justify-content-end gap-2 mb-3">
+        <button mat-button (click)="sortTasks('date')" [class.active]="sortCriteria === 'date'">
+            Sort by Date
+        </button>
+        <button mat-button (click)="sortTasks('priority')" [class.active]="sortCriteria === 'priority'">
+            Sort by Priority
+        </button>
+    </div>
+    
+    
+
+    <div class="task-list-container mat-elevation-z3 p-3">
+        <div class="task-item-container mat-elevation-z2 p-2 d-flex gap-2" *ngFor="let item of filteredTaskList">           
+            <mat-icon *ngIf="!item.completed" role="button" (click)="markAsCompleted(item)">radio_button_unchecked</mat-icon>
+            <mat-icon *ngIf="item.completed" class="text-primary" role="button" (click)="markAsUnCompleted(item)">check_circle</mat-icon>
+            <div class="task-details-container">
+                <p class="mb-1 fw-bold" [ngClass]="{'completed-task': item.completed}">
+                    {{item.title}}
+                </p>
+                <div class="task-details d-flex justify-content-between align-items-center">
+                    <span class="task-date">
+                        Due: {{item.dueDate | date:'medium'}}
+                    </span>
+                    <span class="task-priority badge rounded-pill" [ngClass]="{'bg-danger': item.priority === 'High', 'bg-success': item.priority === 'Medium', 'bg-primary': item.priority === 'Low'}">
+                         {{item.priority}}
+                    </span>
+                    <span
+                        class="badge custom-status-badge"
+                        [ngClass]="{'completed': item.completed, 'pending': !item.completed}">
+                        {{ item.completed ? 'Completed' : 'Pending' }}
+                    </span>
+                        
+                </div>
+                
+            </div>
+            <button mat-icon-button class="ms-auto text-danger" (click)="deleteTask(item)">
+                <mat-icon>highlight_off</mat-icon>
+            </button>
+
+        </div>
+    </div>
+    <button  class="add-task-button" (click)="addNewTask()">
+        add new Task
+        
+    </button>
+</div>
+
+
